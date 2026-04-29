@@ -2,28 +2,47 @@ using UnityEngine;
 
 public class ZombieMove : MonoBehaviour
 {
-    public float speed = 2f;
+    public float speed = 0.5f;
+
     private Rigidbody2D rb;
+    private Animator animator;
+    private bool isAttacking = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
-        // move left toward plants
-        rb.AddForce(Vector2.left * speed, ForceMode2D.Force);
+        if (isAttacking == false)
+        {
+            rb.velocity = new Vector2(-speed, 0f);
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Plant"))
         {
-            //print in console
             Debug.Log("Zombie collided with a plant!");
-            // stop moving when colliding with a plant
-            rb.velocity = Vector2.zero;
+
+            isAttacking = true;
+            animator.SetBool("isAttacking", true);
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Plant"))
+        {
+            isAttacking = false;
+            animator.SetBool("isAttacking", false);
         }
     }
 }
