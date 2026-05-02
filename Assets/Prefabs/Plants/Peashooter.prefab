@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8545123535113822688}
   - component: {fileID: 8545123535113822689}
   - component: {fileID: 3828508311735032281}
+  - component: {fileID: -8552552397358066488}
+  - component: {fileID: 8474012162503638730}
   m_Layer: 6
   m_Name: Peashooter
   m_TagString: Plant
@@ -129,3 +131,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6202601, y: 0.69049144}
   m_EdgeRadius: 0
+--- !u!114 &-8552552397358066488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545123535113822694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95fb404222e86a44bb54616d48b6c5fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  healthText: {fileID: 0}
+--- !u!114 &8474012162503638730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545123535113822694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e7bcd91f5ff814e9b66bf6ed993f8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 214299465120159939, guid: 37a8fddc420e492449418d95cb7c26de, type: 3}
+  bulletOffset: {x: 0.5, y: 0.2, z: 0}
+  shootTime: 2

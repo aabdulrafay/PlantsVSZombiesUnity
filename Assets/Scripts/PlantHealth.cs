@@ -1,10 +1,10 @@
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class PlantHealth : MonoBehaviour
 {
     public int health = 100;
-    public TextMeshProUGUI healthText;
+    public Text  healthText;
 
     void Start()
     {
